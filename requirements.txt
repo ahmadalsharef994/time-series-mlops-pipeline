@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+yfinance
+tensorflow
+torch
+statsmodels
+joblib
+python-multipart
+python-dotenv
+schedule

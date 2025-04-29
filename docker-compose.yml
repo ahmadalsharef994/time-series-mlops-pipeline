@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DATA_SOURCE_YAHOO_TICKER=AAPL
+      - DATA_SOURCE_YAHOO_PERIOD=30d
+      - LSTM_EPOCHS=10
+      - LSTM_BATCH_SIZE=32
+      - ARIMA_ORDER=5,1,0
