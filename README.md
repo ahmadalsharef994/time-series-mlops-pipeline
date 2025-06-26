@@ -37,6 +37,7 @@ This repository contains a complete, automated **MLOps pipeline** for **time-ser
 ├── requirements.txt
 └── README.md
 
+```
 
 ---
 
@@ -61,7 +62,29 @@ This repository contains a complete, automated **MLOps pipeline** for **time-ser
     ```
     (It will automatically run daily at 2:00 AM.)
 
----
+
+## Installation
+1. Ensure Docker and Python 3.x are installed.
+2. Clone the repository: `git clone https://github.com/ahmadalsharef994/time-series-mlops-pipeline.git`
+3. Build the Docker image: `docker build -t time-series-mlops .`
+4. Install dependencies: `pip install -r requirements.txt` (if running locally).
+
+## Usage
+1. Start the services: `docker-compose up`
+2. Access the API at `http://localhost:8000/predict`
+3. Example request: `curl -X POST -d '{"data": [1, 2, 3]}' http://localhost:8000/predict`
+
+## Project Structure
+- `data_processing/`: Scripts for data cleaning and preparation
+- `model/`: Model training and evaluation logic
+- `deployment/`: Configuration for serving the model
+- `Dockerfile`: Docker setup
+
+## License
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Contributing
+Contributions are welcome! Please submit a pull request or open an issue.
 
 ## Requirements
 
