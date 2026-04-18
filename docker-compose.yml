@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   app:
     build: .
@@ -7,9 +5,11 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+    env_file:
+      - .env
     environment:
-      - DATA_SOURCE_YAHOO_TICKER=AAPL
-      - DATA_SOURCE_YAHOO_PERIOD=30d
-      - LSTM_EPOCHS=10
-      - LSTM_BATCH_SIZE=32
-      - ARIMA_ORDER=5,1,0
+      - DATA_SOURCE_YAHOO_TICKER=${DATA_SOURCE_YAHOO_TICKER:-AAPL}
+      - DATA_SOURCE_YAHOO_PERIOD=${DATA_SOURCE_YAHOO_PERIOD:-30d}
+      - LSTM_EPOCHS=${LSTM_EPOCHS:-10}
+      - LSTM_BATCH_SIZE=${LSTM_BATCH_SIZE:-32}
+      - ARIMA_ORDER=${ARIMA_ORDER:-5,1,0}

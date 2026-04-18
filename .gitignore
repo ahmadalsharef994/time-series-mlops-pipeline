@@ -1,2 +1,9 @@
 venv/
 *.pyc
+# Downloaded data
+data/raw/
+data/processed/
+*.csv
+
+# Model artifacts
+models/
